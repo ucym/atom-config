@@ -1,0 +1,54 @@
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed.
+ *
+ * If you are unfamiliar with LESS, you can read more about it here:
+ * http://www.lesscss.org
+ */
+
+.tree-view {
+
+}
+
+atom-text-editor {
+
+}
+
+atom-text-editor .cursor {
+
+}
+
+
+// For refactor
+@import "octicon-utf-codes.less";
+@import "ui-variables.less";
+
+.refactor-reference {
+  .region {
+    border-radius: 2px;
+    box-sizing: border-box;
+    background-color: rgba(54, 175, 144, 0.2);
+    border: 1px solid rgba(54, 175, 144, 0.3);
+  }
+}
+
+.refactor-error {
+  .region {
+    box-sizing: border-box;
+    border-bottom: 1px dotted rgba(255, 0, 0, 1);
+  }
+}
+
+.gutter {
+  .line-number.refactor-error {
+    .icon-right {
+      visibility: visible;
+      &:before {
+        content: @alert;
+        color: @text-color-error;
+      }
+    }
+  }
+}

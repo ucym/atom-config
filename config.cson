@@ -1,0 +1,82 @@
+"*":
+  core:
+    followSymlinks: true
+    disabledPackages: [
+      "symbols-view"
+      "atom-ternjs"
+      "autocomplete-paths"
+      "atom-cli-diff"
+      "slash-closer"
+      "atom-ctags"
+      "Atom-Hack"
+      "language-hack"
+      "atom-typescript"
+      "typescript-atomizer"
+      "vim-mode"
+      "atom-terminal"
+      "coffee-lint"
+      "linter"
+      "Tern"
+      "terminal-panel"
+      "atom-terminal-panel"
+      "minimap"
+      "javascript-refactoring"
+    ]
+    themes: [
+      "atom-dark-ui"
+      "monokai"
+    ]
+    excludeVcsIgnoredPaths: false
+  "save-session":
+    windowX: 575
+    windowY: 28
+    windowWidth: 1342
+    windowHeight: 1173
+    dataSaveFolder: "/Users/me/.atom/packages/save-session/projects"
+    project: "/Users/me/Documents/workspace/halcinema-admin"
+  "exception-reporting":
+    userId: "711d10eb-b595-252c-7c4d-7e8a5af2b6fa"
+  welcome:
+    showOnStartup: false
+  editor:
+    showIndentGuide: true
+    autoIndentOnPaste: false
+    tabLength: 4
+    undoGroupingInterval: 100
+    useShadowDOM: true
+    invisibles:
+      {}
+    showInvisibles: true
+    fontFamily: "SourceCodePro-Light"
+    fontSize: 14
+  "atom-beautify":
+    _analyticsUserId: "3a2845f5-5ea0-4685-9e27-05da04be111e"
+  linter:
+    {}
+  "autocomplete-plus":
+    {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  test: "test"
+  emmet:
+    {}
+  "atom-ctags":
+    {}
+  "autoclose-html":
+    {}
+  "coffee-refactor":
+    {}
+  localization:
+    CurrentLanguage: "Default"
+  "pair-programming":
+    handle: "vegeta-4009"
+  motepair:
+    serverAddress: "localhost"
+    serverPort: 3210
+  "terminal-panel":
+    {}
+  "atom-terminal-panel":
+    {}
+  minimap:
+    charHeight: 10
+    charWidth: 4
