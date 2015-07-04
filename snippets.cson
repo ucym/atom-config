@@ -16,38 +16,33 @@
 # This file uses CoffeeScript Object Notation (CSON).
 # If you are unfamiliar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
-"snippets.cson"     :
-    "define"            :
-        "prefix"            : "-def"
-        "body"              : "\"$1\"\t:\n\t\"prefix\"\t:\"$2\"\n\t\"body\"\t:\"$3\""
-
 ".source.php"  :
     'namespace':
         'prefix': 'ns'
         'body': 'namespace $1;'
 
-    "static public member function"    :
-        "prefix"    : "-psf"
+    "public static function"    :
+        "prefix"    : "psf"
         "body"      : "public static function $1($2)\n{\n$3\n}"
 
-    "static protected member property"  :
-        "prefix"    : "-prsp"
-        "body"      : "protected static $$1;"
+    "protected static function"    :
+        "prefix"    : "prsf"
+        "body"      : "protected static function $1($2)\n{\n$3\n}"
 
-    "static provate member property"  :
-        "prefix"    : "-psp"
+    "static protected member property"  :
+        "prefix"    : "prsp"
         "body"      : "protected static $$1;"
 
     "public member function"            :
-        "prefix"    : "@pf"
+        "prefix"    : "pf"
         "body"      : "public function $1($2)\n{\n$3\n}"
 
     "private member function"           :
-        "prefix"    : "@prif"
+        "prefix"    : "prif"
         "body"      : "private function $1($2)\n{\n$3\n}"
 
     "protected member function"         :
-        "prefix"    : "@prtf"
+        "prefix"    : "@prf"
         "body"      : "protected function $1($2)\n{\n$3\n}"
 
 ".source.ts"   :
