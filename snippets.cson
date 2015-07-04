@@ -56,6 +56,12 @@
         "body"          : "require(\"$1\")"
 
 ".source.coffee"   :
+    # for snippets.cson
+    "snipetts-define"   :
+        "prefix"            : "-def"
+        "body"              : "\"$1\"\t:\n\t\"prefix\"\t:\"$2\"\n\t\"body\"\t:\"$3\"\n"
+
+    # for CoffeeScript
     "doc"           :
         "prefix"        : "#*"
         "body"          : "###*\n# $1\n###"
