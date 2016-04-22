@@ -16,50 +16,411 @@
 # This file uses CoffeeScript Object Notation (CSON).
 # If you are unfamiliar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
+".source.gfm"  :
+    "<"     :
+        "prefix"    : "<;"
+        "body"      : "&lt;"
+
+    ">"     :
+        "prefix"    : ">;"
+        "body"      : "&gt;"
+
+
+
+
 ".source.php"  :
     'namespace':
         'prefix': 'ns'
         'body': 'namespace $1;'
 
-    "public static function"    :
+    # Static method/property definition
+    # -- Method
+    "public static method"      :
         "prefix"    : "psf"
         "body"      : "public static function $1($2)\n{\n$3\n}"
 
-    "protected static function"    :
+    "protected static method"   :
         "prefix"    : "prsf"
         "body"      : "protected static function $1($2)\n{\n$3\n}"
 
-    "static protected member property"  :
+    # -- Property
+    "protected static property"  :
         "prefix"    : "prsp"
         "body"      : "protected static $$1;"
 
-    "public member function"            :
+
+    # Method / Property definition
+    # -- Method
+    "public method"     :
         "prefix"    : "pf"
         "body"      : "public function $1($2)\n{\n$3\n}"
 
-    "private member function"           :
-        "prefix"    : "prif"
+    "protected method"  :
+        "prefix"    : "prf"
+        "body"      : "protected function $1($2)\n{\n$3\n}"
+
+    "private method"    :
+        "prefix"    : "pvf"
         "body"      : "private function $1($2)\n{\n$3\n}"
 
-    "protected member function"         :
-        "prefix"    : "@prf"
-        "body"      : "protected function $1($2)\n{\n$3\n}"
+    # -- Property
+    "public property"      :
+        "prefix"    : "pp"
+        "body"      : "public \$$1;"
+
+    "protected property"   :
+        "prefix"    : "prp"
+        "body"      : "protected \$$2;"
+
+    "private property"     :
+        "prefix"    : "pvp"
+        "body"      : "private \$$3;"
+
+    # Interface method definition
+    "interface public method"    :
+        "prefix"    : "ipf"
+        "body"    : "public function $1($2);$3"
+
+    "interface protected method"    :
+        "prefix"    : "iprf"
+        "body"    : "protected function $1($2);$3"
+
+    # static keywords
+
+    "static::"    :
+        "prefix"    : "s:"
+        "body"      : "static::"
+
+    "static::$var"    :
+        "prefix"    : "s:v"
+        "body"      : "static::\$$1"
+
+    "static::method"    :
+        "prefix"    : "s::"
+        "body"      : "static::$1($2)${3:;}$4"
+
+    # array
+
+    "array"     :
+        "prefix"    : "a[]"
+        "body"      : "array($1)${2:;}"
+
+    # PHP Doc
+    "@param"    :
+        "prefix"    : "*@p"
+        "body"      : "* @param $1"
+
+    "@param string"     :
+        "prefix"    : "@param s"
+        "body"      : "@param string$1 \t\$$2"
+
+    "@param bool"       :
+        "prefix"    : "@param b"
+        "body"      : "@param bool$1 \t\$$2"
+
+    "@param array"       :
+        "prefix"    : "@param a"
+        "body"      : "@param array$1 \t\$$2"
+
+    "@param number"     :
+        "prefix"    : "@param n"
+        "body"      : "@param number$1 \t\$$2"
+
+    "@param float"      :
+        "prefix"    : "@param f"
+        "body"      : "@param float$1 \t\$$2"
+
+    "@param mixed"      :
+        "prefix"    : "@param m"
+        "body"      : "@param mixed$1 \t\$$2"
+
+    "@return"   :
+        "prefix"    : "*@r"
+        "body"      : "* @return $1"
+
+    # Functions
+    "array_key_exists"  :
+        "prefix"    : "ake"
+        "body"      : "array_key_exists(${1:$key}, ${2:$search})"
+
+
+
 
 ".source.ts"   :
     "reference"     :
-        "prefix"        : "/r"
+        "prefix"        : "///"
         "body"          : "/// <reference path=\"$1\" />"
+
+    "require"       :
+        "prefix"        : "rq"
+        "body"          : "require(\"$1\")"
+
+    "doc"           :
+        "prefix"        : "/*"
+        "body"          : "/**\n\t * $1\n\t */"
+
+    "this"    :
+        "prefix"    : "@"
+        "body"      : "this"
+
+    "this."   :
+        "prefix"    : "@."
+        "body"      : "this."
+
+    "this from t"   :
+        "prefix"    : "th"
+        "body"      : "this"
+
+    "this. from t"   :
+        "prefix"    : "t."
+        "body"      : "this."
+
+    "function"      :
+        "prefix"        : "fn"
+        "body"          : "function $1($2) {\n\t$3\n\t}"
+
+    "generator function" :
+        "prefix"        : "gn"
+        "body"          : "function* $1($2) {\n\t$3\n\t}"
+
+    "async function"    :
+        "prefix"        : "an"
+        "body"          : "async function $1($2) {\n\t$3\n\t}"
+
+    "immediate func":
+        "prefix"        : "ifn"
+        "body"          : "(function () {\n$1\n}());"
+
+    "instanceof"    :
+        "prefix"        : "iof"
+        "body"          : "$1 instanceof $2"
+
+    "args"          :
+        "prefix"        : "args"
+        "body"          : "arguments"
+
+    "return"        :
+        "prefix"        : "ret"
+        "body"          : "return $1;"
+
+    "const"         :
+        "prefix"        : "cn"
+        "body"          : "const "
+
+    "import"    :
+        "prefix"    : "imp"
+        "body"      : "import "
+
+    "import"    :
+        "prefix"    : "im"
+        "body"      : "import ${1:\\{$2\\}}$3 = require(\"$4\");"
+
+    "export"    :
+        "prefix"    : "ex"
+        "body"      : "export "
+
+    "default"       :
+        "prefix"        : "def"
+        "body"          : "default "
+
+    "yield"    :
+        "prefix"    : "yi"
+        "body"      : "yield ${1:$2;}$3"
+
+    "await"    :
+        "prefix"    : "aw"
+        "body"      : "await "
+
+    "public"    :
+        "prefix"    : "pb"
+        "body"      : "public "
+
+    "module.exports = " :
+        "prefix"    : "mx"
+        "body"      : "module.exports = "
+
+    "console log"       :
+        "prefix"            : "csl"
+        "body"              : "console.log($1);"
+
+    "console error"       :
+        "prefix"            : "cse"
+        "body"              : "console.error($1);"
+
+    "console info"      :
+        "prefix"            : "csi"
+        "body"              : "console.info($1);"
+
+    "console trace"     :
+        "prefix"            : "cst"
+        "body"              : "console.trace(${1:($2)});"
+
+    "console log arguments" :
+        "prefix"            : "csla"
+        "body"              : "console.log(${1:, }arguments);"
+
+    "console dir"       :
+        "prefix"            : "csd"
+        "body"              : "console.dir($1);"
+
+    "console group"       :
+        "prefix"            : "csg"
+        "body"              : "console.group($1);"
+
+    "console groupEnd"       :
+        "prefix"            : "csge"
+        "body"              : "console.groupEnd();"
+
+    "interface"         :
+        "prefix"            : "intr"
+        "body"              : "interface $1 \n{\n$2\n}"
+
+
+
 
 ".source.js"   :
     "require"       :
         "prefix"        : "rq"
-        "body"          : "require(\"$1\")"
+        "body"          : "require(\"$1\");"
+
+    "doc"           :
+        "prefix"        : "/*"
+        "body"          : "/**\n\t * $1\n\t */"
+
+    "this"    :
+        "prefix"    : "@"
+        "body"      : "this"
+
+    "this."   :
+        "prefix"    : "@."
+        "body"      : "this."
+
+    "this from t"   :
+        "prefix"    : "th"
+        "body"      : "this"
+
+    "this. from t"   :
+        "prefix"    : "t."
+        "body"      : "this."
+
+    "function"      :
+        "prefix"        : "fn"
+        "body"          : "function $1($2) {\n\t$3\n}"
+
+    "generator function" :
+        "prefix"        : "gf"
+        "body"          : "function* $1($2) {\n\t$3\n}"
+
+    "async function"    :
+        "prefix"        : "af"
+        "body"          : "async function $1($2) {\n\t$3\n}"
+
+    "immediate func":
+        "prefix"        : "ifn" # if set to "if" it's very UZAI when type "if"
+        "body"          : "(function () {\n$1\n}());"
+
+    "instanceof"    :
+        "prefix"        : "iof"
+        "body"          : "$1 instanceof $2"
+
+    "args"          :
+        "prefix"        : "args"
+        "body"          : "arguments"
+
+    "return"        :
+        "prefix"        : "ret"
+        "body"          : "return $1;"
+
+    "const"         :
+        "prefix"        : "cn"
+        "body"          : "const "
+
+    "import"    :
+        "prefix"    : "imp"
+        "body"      : "import "
+
+    "import"    :
+        "prefix"    : "im"
+        "body"      : "import ${1:\\{$2\\}}$3 from \"$4\";"
+
+    "export default" :
+        "prefix"    : "ed"
+        "body"      : "export default "
+
+    "export default function" :
+        "prefix"    : "edf"
+        "body"      : "export default function $1($2) {\n\t$3\n}"
+
+    "exporet default class" :
+        "prefix"    : "edc"
+        "body"      : "export default class $1${2: extends $3} {\n\t$4\n}"
+
+    "export"    :
+        "prefix"    : "ex"
+        "body"      : "export "
+
+    "default"       :
+        "prefix"        : "def"
+        "body"          : "default "
+
+    "yield"    :
+        "prefix"    : "yi"
+        "body"      : "yield ${1:$2;}$3"
+
+    "await"    :
+        "prefix"    : "aw"
+        "body"      : "await "
+
+    "prototype" :
+        "prefix"    : "::"
+        "body"      : "prototype"
+
+    ".prototype" :
+        "prefix"    : ".::"
+        "body"      : ".prototype"
+
+    "module.exports = " :
+        "prefix"    : "mx"
+        "body"      : "module.exports = "
+
+    "console log"       :
+        "prefix"            : "csl"
+        "body"              : "console.log($1);"
+
+    "console error"       :
+        "prefix"            : "cse"
+        "body"              : "console.error($1);"
+
+    "console info"      :
+        "prefix"            : "csi"
+        "body"              : "console.info($1);"
+
+    "console trace"     :
+        "prefix"            : "cst"
+        "body"              : "console.trace(${1:($2)});"
+
+    "console log arguments" :
+        "prefix"            : "csla"
+        "body"              : "console.log(${1:, }arguments);"
+
+    "console dir"       :
+        "prefix"            : "csd"
+        "body"              : "console.dir($1);"
+
+    "console group"       :
+        "prefix"            : "csg"
+        "body"              : "console.group($1);"
+
+    "console groupEnd"       :
+        "prefix"            : "csge"
+        "body"              : "console.groupEnd();"
+
 
 ".source.coffee"   :
     # for snippets.cson
     "snipetts-define"   :
         "prefix"            : "-def"
-        "body"              : "\"$1\"\t:\n\t\"prefix\"\t:\"$2\"\n\t\"body\"\t:\"$3\"\n"
+        "body"              : "\"$1\"\t:\n\t\"prefix\"\t: \"$2\"\n\t\"body\"\t: \"$3\"\n"
 
     # for CoffeeScript
     "doc"           :
@@ -69,6 +430,10 @@
     "return"        :
         "prefix"        : "ret"
         "body"          : "return "
+
+    "return false"  :
+        "prefix"        : "retf"
+        "body"          : "return false"
 
     "module.exports":
         "prefix"        : "mx"
@@ -86,6 +451,10 @@
         "prefix"            : "csl"
         "body"              : "console.log $1"
 
+    "console error"       :
+        "prefix"            : "cse"
+        "body"              : "console.error $1"
+
     "console info"      :
         "prefix"            : "csi"
         "body"              : "console.info $1"
@@ -98,10 +467,51 @@
         "prefix"            : "csla"
         "body"              : "console.log ${1:, }arguments"
 
+    "console dir"       :
+        "prefix"            : "csd"
+        "body"              : "console.dir $1"
+
+    "console group"       :
+        "prefix"            : "csg"
+        "body"              : "console.group $1"
+
+    "console groupEnd"       :
+        "prefix"            : "csge"
+        "body"              : "console.groupEnd()"
+
     "instanceof"    :
         "prefix"            : "iof"
-        "body"              : "$1 instanceof $2"
+        "body"              : "instanceof $2"
 
     "args"          :
-        "prefix"            : "ags"
+        "prefix"            : "args"
         "body"              : "arguments"
+
+    "promise"       :
+        "prefix"            : "prm"
+        "body"              : "new Promise (resolve, reject) ->\n\t$1"
+
+    "resolve with arguments"    :
+        "prefix"            : "resarg"
+        "body"              : "${1:-}> resolve(arguments)"
+
+    "Object.keys"   :
+        "prefix"            : "o.k"
+        "body"              : "Object.keys${1:($2)}"
+
+    "typeof"        :
+        "prefix"            : "to"
+        "body"              : "typeof $1"
+
+    "typeof fucntion"   :
+        "prefix"            : "tof"
+        "body"              : "typeof $1 is \"function\""
+
+    "document.createElement"    :
+        "prefix"            : "dce"
+        "body"              : "document.createElement(\"$1\")"
+
+".source.stylus" :
+    "import"    :
+        "prefix"    : "i"
+        "body"      : "@import \"$1\""

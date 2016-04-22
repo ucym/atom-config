@@ -35,5 +35,8 @@
     'alt-left': 'emmet:prev-edit-point'
     'alt-right': 'emmet:next-edit-point'
 
+    'alt-up' : 'editor:upper-case'
+    'alt-down' : 'editor:lower-case'
+
 'atom-text-editor[data-grammar="source stylus"]:not(.mini)':
     'tab'   : 'emmet:expand-abbreviation-with-tab'

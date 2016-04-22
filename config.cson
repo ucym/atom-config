@@ -1,82 +1,152 @@
 "*":
+  "atom-beautify":
+    _analyticsUserId: "3a2845f5-5ea0-4685-9e27-05da04be111e"
+  "atom-ctags": {}
+  "atom-pronama-chan":
+    imageOpacity: 0.1
+    images: {}
+    startVoice: {}
+  "atom-terminal-panel": {}
+  "atom-twitter-reader":
+    access_token_key: "2758473847-Q3JQzApPnQrpUcfj8MyLp0NJgFb3E0gLgA15IBr"
+    access_token_secret: "2gABTIWZwkNrOEJ9aixF80uzEnC58g83Osp7FDwV3dhi5"
+    consumer_key: "pHnz9I17bGXzB8EflWQMp1jlP"
+    consumer_secret: "zULncwRHBujwQJMZvQVMO7K4dgsb69JXfkjMWNY4fC6skP6VTY"
+  "atom-typescript": {}
+  "atom-typescript-tools":
+    compiler: {}
+    format: {}
+  "autoclose-html": {}
+  "autocomplete-plus": {}
+  "coffee-paste":
+    nodePath: "node"
+  "coffee-refactor": {}
   core:
-    followSymlinks: true
     disabledPackages: [
-      "symbols-view"
       "atom-ternjs"
-      "autocomplete-paths"
       "atom-cli-diff"
       "slash-closer"
       "atom-ctags"
-      "Atom-Hack"
       "language-hack"
-      "atom-typescript"
       "typescript-atomizer"
       "vim-mode"
-      "atom-terminal"
-      "coffee-lint"
-      "linter"
       "Tern"
-      "terminal-panel"
-      "atom-terminal-panel"
-      "minimap"
-      "javascript-refactoring"
-    ]
-    themes: [
-      "atom-dark-ui"
-      "monokai"
+      "atom-pronama-chan"
+      "atom-typescript-tools"
+      "atom-twitter"
+      "atom-twitter"
+      "atom-twitter"
+      "atom-twitter"
+      "atom-twitter"
+      "atom-twitter"
+      "atom-twitter"
+      "autocomplete-php"
+      "php-class-tree"
+      "php-introspector"
+      "tree-view-background"
+      "nuclide-debugger-atom"
+      "nuclide-type-hint"
     ]
     excludeVcsIgnoredPaths: false
-  "save-session":
-    windowX: 575
-    windowY: 28
-    windowWidth: 1342
-    windowHeight: 1173
-    dataSaveFolder: "/Users/me/.atom/packages/save-session/projects"
-    project: "/Users/me/Documents/workspace/halcinema-admin"
-  "exception-reporting":
-    userId: "711d10eb-b595-252c-7c4d-7e8a5af2b6fa"
-  welcome:
-    showOnStartup: false
+    themes: [
+      "one-light-ui"
+      "atom-light-syntax"
+    ]
   editor:
-    showIndentGuide: true
     autoIndentOnPaste: false
+    fontFamily: "SourceCodePro-Light"
+    fontSize: 12
+    invisibles: {}
+    showIndentGuide: true
+    showInvisibles: true
     tabLength: 4
     undoGroupingInterval: 100
     useShadowDOM: true
-    invisibles:
-      {}
-    showInvisibles: true
-    fontFamily: "SourceCodePro-Light"
-    fontSize: 14
-  "atom-beautify":
-    _analyticsUserId: "3a2845f5-5ea0-4685-9e27-05da04be111e"
-  linter:
-    {}
-  "autocomplete-plus":
-    {}
-  "tree-view":
-    hideVcsIgnoredFiles: true
-  test: "test"
-  emmet:
-    {}
-  "atom-ctags":
-    {}
-  "autoclose-html":
-    {}
-  "coffee-refactor":
-    {}
+  "editor-background":
+    box3d: {}
+    image:
+      customOverlayColor: true
+      opacity: 40
+      overlayColor:
+        alpha: 1
+        blue: 255
+        green: 255
+        red: 255
+      url: "/Users/me/Documents/マジック\\ ブリーフケース/Image/wallpaper/illust/0dbe7f28.jpg"
+    other: {}
+    text:
+      blur: 50
+    video: {}
+  emmet: {}
+  "exception-reporting":
+    userId: "711d10eb-b595-252c-7c4d-7e8a5af2b6fa"
+  "file-watcher":
+    promptWhenFileHasChangedOnDisk: false
+  "gfm-pdf": {}
+  jshint:
+    onlyConfig: true
+  linter: {}
+  "linter-php": {}
   localization:
     CurrentLanguage: "Default"
-  "pair-programming":
-    handle: "vegeta-4009"
+  "markdown-pdf": {}
+  "markdown-preview": {}
+  minimap:
+    absoluteMode: true
+    charHeight: 10
+    charWidth: 4
   motepair:
     serverAddress: "localhost"
     serverPort: 3210
-  "terminal-panel":
-    {}
-  "atom-terminal-panel":
-    {}
-  minimap:
-    charHeight: 10
-    charWidth: 4
+  nuclide:
+    "nuclide-arcanist": {}
+    "nuclide-buck-files": {}
+    "nuclide-debugger-hhvm": {}
+    "nuclide-file-tree":
+      hideIgnoredNames: false
+    "nuclide-flow":
+      diagnosticsOnFly: true
+      enableStructuredTypeHints: true
+    "nuclide-format-js": {}
+    "nuclide-hack": {}
+    "nuclide-health": {}
+    "nuclide-home":
+      showHome: false
+    "nuclide-ocaml": {}
+    "nuclide-output": {}
+    use:
+      "nuclide-adb-logcat": false
+      "nuclide-arcanist": false
+      "nuclide-blame": false
+      "nuclide-blame-provider-hg": false
+      "nuclide-blame-ui": false
+      "nuclide-buck-files": false
+      "nuclide-buck-toolbar": false
+      "nuclide-code-format": false
+      "nuclide-file-tree": false
+      "nuclide-objc": false
+      "nuclide-ocaml": false
+      "nuclide-remote-ctags": false
+      "nuclide-remote-projects": false
+      "nuclide-test-runner": false
+  "one-light-ui":
+    layoutMode: "Spacious"
+  "pair-programming":
+    handle: "vegeta-4009"
+  "save-session":
+    dataSaveFolder: "/Users/me/.atom/packages/save-session/projects"
+    project: "/Users/me/Documents/workspace/halcinema-admin"
+    windowHeight: 1173
+    windowWidth: 1342
+    windowX: 575
+    windowY: 28
+  "terminal-panel": {}
+  test: "test"
+  "travis-ci-status":
+    personalAccessToken: "WsniKPsHDPfgp4QfzxQS"
+  "tree-view": {}
+  "tree-view-background":
+    opacity: 0
+  "twitter-reader": {}
+  welcome:
+    showOnStartup: false
